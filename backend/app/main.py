@@ -6,9 +6,14 @@ import os
 
 app = FastAPI(title="University Assistant")
 
+# CORS Configuration: Allow frontend from localhost (dev) and Vercel (production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",      # Local development
+        "http://localhost:5174",      # Local fallback port
+        "https://imu-multi-ai-agent.vercel.app",  # Production frontend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
