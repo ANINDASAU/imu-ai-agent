@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+httpx
+python-dotenv
+psycopg2-binary
+supabase
+alembic
+# Optional: Google Gemini generative model for better routing and tone detection
+google-generativeai==0.8.5
